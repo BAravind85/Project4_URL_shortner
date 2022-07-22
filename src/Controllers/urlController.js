@@ -97,7 +97,7 @@ const getUrl = async function (req, res) {
 
     //if data present in cache
     if (cahcedUrlData) {
-      res.status(302).redirect(`${data.longUrl}`)
+      res.redirect(`${data.longUrl}` ,  302)
     }
     else {
 
@@ -111,7 +111,7 @@ const getUrl = async function (req, res) {
       //setting data in cache
       await SET_ASYNC(`${urlCode}`, JSON.stringify(urlData))
 
-      return res.status(302).redirect(`${urlData.longUrl}`)
+      return res.redirect(`${urlData.longUrl}` ,  302)
     }
 
   }
